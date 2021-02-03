@@ -29,7 +29,7 @@ public class IntroducationFragment extends Fragment {
 
                 FragmentManager fm = getFragmentManager();
                 FragmentTransaction ft = fm.beginTransaction();
-                ft.replace(R.id.maincontainer,new HomeFragment());
+                ft.replace(R.id.maincontainer,new LoginFragment());
                 ft.commit();
             }
         });
