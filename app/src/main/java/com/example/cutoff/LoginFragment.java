@@ -52,7 +52,7 @@ public class LoginFragment extends Fragment {
 
                 FragmentManager fragmentManager = getFragmentManager();
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                fragmentTransaction.replace(R.id.maincontainer, new IntroducationFragment());
+                fragmentTransaction.replace(R.id.maincontainer, new HomeFragment());
                 fragmentTransaction.commit();
             }
         });
