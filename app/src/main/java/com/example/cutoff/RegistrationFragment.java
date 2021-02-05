@@ -27,6 +27,11 @@ public class RegistrationFragment extends Fragment {
         Button  register   = v.findViewById(R.id.register_button);
         TextView backlogin = v.findViewById(R.id.textviewLogin);
 
+
+        register.setOnClickListener(view -> {
+            performregister();
+        });
+
         backlogin.setOnClickListener(view -> {
             FragmentManager fr = getFragmentManager();
             FragmentTransaction ft = fr.beginTransaction();
@@ -35,6 +40,8 @@ public class RegistrationFragment extends Fragment {
         });
 
         return v;
+    }
+    private void performregister(){
 
     }
 }
