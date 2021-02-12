@@ -4,14 +4,17 @@ import com.google.gson.annotations.SerializedName;
 
 public class ApiResponse {
 
-        @SerializedName("success")
+    @SerializedName("success")
         private String success;
 
         @SerializedName("message")
         private String message;
 
-        @SerializedName("Data")
-        private String  Data;
+    @SerializedName("result")
+    private int result;
+
+        @SerializedName("status")
+        private String  status;
 
     public String getSuccess() {
         return success;
@@ -21,8 +24,12 @@ public class ApiResponse {
         return message;
     }
 
-    public String getData() {
-        return Data;
+    public String getStatus() {
+        return status;
+    }
+
+    public int getResult() {
+        return result;
     }
 }
 
