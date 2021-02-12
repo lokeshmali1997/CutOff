@@ -43,33 +43,30 @@ public class MainActivity extends AppCompatActivity {
 
         navigationView = findViewById(R.id.navigationview);
 
-        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        navigationView.setNavigationItemSelectedListener(item -> {
 
 
-                 switch (item.getItemId())
-                 {
-                     case R.id.navhome:
-                         fragment = new HomeFragment();
-                         loadfragement(fragment);
-                         drawerLayout.closeDrawer(GravityCompat.START);
-                         break;
-                     case R.id.navnews :
-                         fragment = new NewsFragment();
-                         loadfragement(fragment);
-                         drawerLayout.closeDrawer(GravityCompat.START);
-                         break;
+             switch (item.getItemId())
+             {
+                 case R.id.navhome:
+                     fragment = new HomeFragment();
+                     loadfragement(fragment);
+                     drawerLayout.closeDrawer(GravityCompat.START);
+                     break;
+                 case R.id.navnews :
+                     fragment = new NewsFragment();
+                     loadfragement(fragment);
+                     drawerLayout.closeDrawer(GravityCompat.START);
+                     break;
 
-                     default:
-                          return true;
+                 default:
+                      return true;
 
-                 }
+             }
 
 
 
-                return true;
-            }
+            return true;
         });
 
 

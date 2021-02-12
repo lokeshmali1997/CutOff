@@ -16,14 +16,7 @@ public class Introducation extends AppCompatActivity {
 
         Button btnstart = findViewById(R.id.btnstart);
 
-        btnstart.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                startActivity(new Intent(Introducation.this,MainActivity.class));
-
-            }
-        });
+        btnstart.setOnClickListener(view -> startActivity(new Intent(Introducation.this,Login.class)));
 
     }
 }
