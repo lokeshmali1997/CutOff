@@ -6,8 +6,7 @@ public class ApiResponse {
 
     @SerializedName("success")
         private String success;
-
-    public String getSuccess() {
+        public String getSuccess() {
         return success;
     }
 

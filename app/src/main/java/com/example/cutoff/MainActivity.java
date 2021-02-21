@@ -1,6 +1,7 @@
 package com.example.cutoff;
 
-import androidx.annotation.NonNull;
+import android.os.Bundle;
+
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -10,9 +11,6 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
-import android.os.Bundle;
-import android.view.MenuItem;
-
 import com.google.android.material.navigation.NavigationView;
 
 public class MainActivity extends AppCompatActivity {
@@ -20,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
     ActionBarDrawerToggle actionBarDrawerToggle;
     DrawerLayout drawerLayout;
     Fragment fragment = null;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.add(R.id.maincontainer,new HomeFragment());
         fragmentTransaction.commit();
+
 
 
         drawerLayout = findViewById(R.id.drawer1);
