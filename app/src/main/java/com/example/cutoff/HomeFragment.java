@@ -106,8 +106,8 @@ public class HomeFragment extends Fragment {
 
             View v = LayoutInflater.from(context).inflate(R.layout.custom_gridview_home, null);
 
-            TextView courseName = view.findViewById(R.id.couesetitle);
-            ImageView courseIcon = view.findViewById(R.id.coueseimage);
+            TextView courseName = v.findViewById(R.id.couesetitle);
+            ImageView courseIcon = v.findViewById(R.id.coueseimage);
 
             courseName.setText(courseList.get(position).getCourseName());
 
