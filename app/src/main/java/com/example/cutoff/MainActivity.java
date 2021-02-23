@@ -1,6 +1,8 @@
 package com.example.cutoff;
 
-import androidx.annotation.NonNull;
+import android.content.Intent;
+import android.os.Bundle;
+
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -10,9 +12,6 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
-import android.os.Bundle;
-import android.view.MenuItem;
-
 import com.google.android.material.navigation.NavigationView;
 
 public class MainActivity extends AppCompatActivity {
@@ -20,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
     ActionBarDrawerToggle actionBarDrawerToggle;
     DrawerLayout drawerLayout;
     Fragment fragment = null;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
         fragmentTransaction.commit();
 
 
+
         drawerLayout = findViewById(R.id.drawer1);
         actionBarDrawerToggle = new ActionBarDrawerToggle(this,drawerLayout,toolbar,R.string.open,R.string.close);
         drawerLayout.addDrawerListener(actionBarDrawerToggle);
@@ -43,33 +44,34 @@ public class MainActivity extends AppCompatActivity {
 
         navigationView = findViewById(R.id.navigationview);
 
-        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        navigationView.setNavigationItemSelectedListener(item -> {
 
 
-                 switch (item.getItemId())
-                 {
-                     case R.id.navhome:
-                         fragment = new HomeFragment();
-                         loadfragement(fragment);
-                         drawerLayout.closeDrawer(GravityCompat.START);
-                         break;
-                     case R.id.navnews :
-                         fragment = new NewsFragment();
-                         loadfragement(fragment);
-                         drawerLayout.closeDrawer(GravityCompat.START);
-                         break;
+             switch (item.getItemId())
+             {
+                 case R.id.navhome:
+                     fragment = new HomeFragment();
+                     loadfragement(fragment);
+                     drawerLayout.closeDrawer(GravityCompat.START);
+                     break;
+                 case R.id.navnews :
+                     fragment = new NewsFragment();
+                     loadfragement(fragment);
+                     drawerLayout.closeDrawer(GravityCompat.START);
+                     break;
+                 case R.id.navlogout :
+                     startActivity(new Intent(MainActivity.this,Login.class));
+                     drawerLayout.closeDrawer(GravityCompat.START);
+                     break;
 
-                     default:
-                          return true;
+                 default:
+                      return true;
 
-                 }
+             }
 
 
 
-                return true;
-            }
+            return true;
         });
 
 

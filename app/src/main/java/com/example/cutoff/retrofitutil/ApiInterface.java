@@ -13,4 +13,8 @@ public interface ApiInterface {
     @POST("registerUser.php")
     Call<ApiResponse> performUserSignIn(@Field("username") String username,@Field("useremail") String useremail,@Field("userpassword") String userpassword,@Field("usermobile") String usermobile);
 
+    @FormUrlEncoded
+    @POST("fetch_Result.php")
+    Call<ApiResponse> performUserLogin(@Field("useremail") String useremail,@Field("userpassword") String userpassword);
+
 }
