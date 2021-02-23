@@ -1,24 +1,32 @@
 package com.example.cutoff.models;
 
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
+
 public class CourseApiResponse {
 
-    public int courseId, courseOrder;
-    public String courseName, courseIcon, courseURL;
+    @SerializedName("courseId")
+    @Expose
+    private Integer courseId;
+    @SerializedName("courseName")
+    @Expose
+    private String courseName;
+    @SerializedName("courseOrder")
+    @Expose
+    private Integer courseOrder;
+    @SerializedName("courseIcon")
+    @Expose
+    private String courseIcon;
+    @SerializedName("courseURL")
+    @Expose
+    private String courseURL;
 
-    public int getCourseId() {
+    public Integer getCourseId() {
         return courseId;
     }
 
-    public void setCourseId(int courseId) {
+    public void setCourseId(Integer courseId) {
         this.courseId = courseId;
-    }
-
-    public int getCourseOrder() {
-        return courseOrder;
-    }
-
-    public void setCourseOrder(int courseOrder) {
-        this.courseOrder = courseOrder;
     }
 
     public String getCourseName() {
@@ -27,6 +35,14 @@ public class CourseApiResponse {
 
     public void setCourseName(String courseName) {
         this.courseName = courseName;
+    }
+
+    public Integer getCourseOrder() {
+        return courseOrder;
+    }
+
+    public void setCourseOrder(Integer courseOrder) {
+        this.courseOrder = courseOrder;
     }
 
     public String getCourseIcon() {
