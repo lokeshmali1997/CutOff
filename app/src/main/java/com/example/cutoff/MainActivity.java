@@ -1,5 +1,6 @@
 package com.example.cutoff;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -56,6 +57,10 @@ public class MainActivity extends AppCompatActivity {
                  case R.id.navnews :
                      fragment = new NewsFragment();
                      loadfragement(fragment);
+                     drawerLayout.closeDrawer(GravityCompat.START);
+                     break;
+                 case R.id.navlogout :
+                     startActivity(new Intent(MainActivity.this,Login.class));
                      drawerLayout.closeDrawer(GravityCompat.START);
                      break;
 
