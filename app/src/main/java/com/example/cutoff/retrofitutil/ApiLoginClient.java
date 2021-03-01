@@ -5,7 +5,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ApiLoginClient {
 
-    private static final String BASE_URL = " http://192.168.29.118/CutOff_API/v1/Login/";
+    private static final String BASE_URL = " http://192.168.1.25/CutOff_API/v1/Login/";
     private static Retrofit retrofit = null;
 
 
